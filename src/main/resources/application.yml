@@ -1,0 +1,13 @@
+quarkus:
+  datasource:
+    db-kind: postgresql
+    reactive:
+      url: postgresql:
+    username: 
+    password: 
+
+  grpc:
+    server:
+      port: 7001
+  http:
+    port: 8081

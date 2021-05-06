@@ -1,0 +1,28 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "ssaver.gob.mx.financieros.catalogos";
+option java_outer_classname = "FinancierosCatalogos";
+
+package financieros;
+
+service PartidaMethod{
+  rpc getPartidas(EmptyGRPC) returns (listPartidaGRPC){}
+  rpc getPartidaById(idPartidaGRPC) returns (PartidaGRPC){}
+}
+
+message listPartidaGRPC{
+  repeated PartidaGRPC partidas = 1;
+}
+
+message PartidaGRPC{
+  int32 idPartida = 1;
+  int32 clave = 2;
+  string descripcion = 3;
+  string usuario = 4;
+}
+
+message  idPartidaGRPC{
+  int32 idPartida = 1;
+}
+message EmptyGRPC{}
